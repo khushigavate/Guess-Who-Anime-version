@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+/* Cards container */
+.cards {
+    width: 70%;
+    position: absolute;
+    top: 50%;
+    left: 2.5%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/* Individual card styling */
+.card {
+    background: linear-gradient(145deg, #cfd8dc, #eceff1);
+    box-shadow: 8px 8px 16px #b0bec5, -8px -8px 16px #ffffff;
+    width: 12%;
+    margin: 1%;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    perspective: 1000px;
+    position: relative;
+}
+
+.card h2 {
+    font-size: 1em;
+    margin-top: 10px;
+    color: #607d8b;
+    font-weight: bold;
+}
+
+.cards img {
+    width: 100%;
+    border-radius: 5px;
+    transition: transform 0.5s ease;
+}
+
+/* Card hover effect */
+.card:hover {
+    transform: scale(1.05) rotateY(10deg);
+    box-shadow: 12px 12px 24px #9ea7ab, -12px -12px 24px #ffffff;
+}
+
+.card:hover img {
+    transform: scale(1.2) rotate(5deg);
+}
+
+/* Hover effect with color and animation */
+.hover {
+    background-color: #ff5722;
+    color: white;
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Highlight the selected card */
+.card:active {
+    background-color: #3949ab;
+    color: #fff;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.4);
+    transform: scale(0.9) translateY(4px);
+}
+
+/* Your card display (the one to guess) */
+.yourCard {
+    width: 20%;
+    position: absolute;
+    right: 5%;
+    text-align: center;
+    background: linear-gradient(145deg, #d6d8db, #f1f3f4);
+    box-shadow: 6px 6px 12px #b0bec5, -6px -6px 12px #ffffff;
+    padding: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 10px;
+}
+
+.yourCard img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.5s ease;
+}
+
+.yourCard img:hover {
+    transform: scale(1.1) rotate(3deg);
+}
+
+/* Adding subtle animations to yourCard on load */
+.yourCard {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(-50%) translateX(0);
+    }
+    50% {
+        transform: translateY(-48%) translateX(5px);
+    }
+}
